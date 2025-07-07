@@ -94,9 +94,9 @@ INSERT INTO personas (rut, nombre_completo, fecha_nac, id_usuario, id_ciudad) VA
 ('99.999.999-9', 'Ana Farías', '1995-01-28', 10, 4),
 ('10.101.010-0', 'Carlos Soto', '1991-08-08', 1, 1); -- admin01
 
-
-
-
-
+select p.nombre_completo,p.fecha_nac,u.username
+from personas p, usuarios u
+where p.id_usuario = u.id_usuario
+and p.nombre_completo like 'A%';
 
 
