@@ -99,4 +99,21 @@ from personas p, usuarios u
 where p.id_usuario = u.id_usuario
 and p.nombre_completo like 'A%';
 
+select u.username,u.email,t.nombre_tipo
+from  usuarios u,tipo_usuarios t
+where u.id_tipo_usuario = t.id_tipo
+and t.nombre_tipo = 'cliente';
 
+select p.nombre_completo, p.fecha_nac, u.username
+from personas p,  usuarios u 
+where p.id_usuario = u.id_usuario and year(p.fecha_nac)>=1990;
+
+select username,email
+from usuarios
+where email like '%mail.com'; 
+
+select p.nombre_completo, u.username, c.nombre_ciudad
+from personas p , usuarios u,ciudad c
+where p.id_usuario = u.id_usuario
+and p.id_ciudad = c.id_ciudad
+and  c.id_ciudad<>2;
